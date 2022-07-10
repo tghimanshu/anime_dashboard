@@ -1,0 +1,109 @@
+.tabs {
+  display: flex;
+  gap: 8px;
+  background-color: rgba(white, 0.25);
+  backdrop-filter: blur(3px);
+  border-radius: 12px;
+  padding: 10px;
+  margin: 12px;
+  margin-top: 40px;
+}
+
+.tab {
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+}
+// works same as gap in the parent element
+// .tab {
+//   &:not(:last-child) {
+//     margin-right: 14px;
+//   }
+// }
+
+.tab-tile {
+  display: flex;
+  padding: 10px;
+  cursor: pointer;
+  i {
+    font-size: 18px;
+    color: #222;
+  }
+  transition: all 0.2s ease-out;
+}
+.tab.selected .tab-tile {
+  transform: translateY(-50%);
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0, 0, 0, 2);
+}
+
+// Styles for the tab tile background `SHAPE`
+
+.tab-tile::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: linear-gradient(45deg, #f8b5a5, #e2d2fd);
+  border-radius: 11px;
+  top: 0;
+  left: 0;
+  opacity: 0.9;
+  transition: all 0.2s ease-out;
+}
+
+.bookmarks-tab .tab-tile::before {
+  background: linear-gradient(45deg, #f8b5a5, #e2d2fd);
+}
+
+.todos-tab .tab-tile::before {
+  background: linear-gradient(45deg, #a2ffff, #ffbdde);
+}
+
+.notes-tab .tab-tile::before {
+  background: linear-gradient(45deg, #d2cdff, #5fffbc);
+}
+
+.tab-tile:hover::before {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.tab.selected .tab-tile::before {
+  opacity: 1;
+  transform: scale(1.2);
+  border-radius: 50%;
+  box-shadow: 0px 7px 17px rgba(black, 0.12);
+  transition-delay: 0.2s;
+}
+
+// End of tab tile background shape styles
+
+// Styles for the underline effect of tabs
+
+.tab::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  width: 70%;
+  margin: auto;
+  background-color: rgba(white, 0.85);
+  // border-radius: 2px;
+  transition: all 0.2s;
+  // hide by default
+  opacity: 0;
+  transform: scalaX(0);
+}
+.tab.selected::after {
+  opacity: 1;
+  transform: scaleX(1);
+  transition-delay: 0.2s;
+}
+
+.tab.selected {
+  outline: none;
+}

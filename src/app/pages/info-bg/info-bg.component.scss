@@ -1,0 +1,18 @@
+.info-bg-wrapper {
+  overflow: auto;
+  padding: 35px;
+  border-radius: 5px;
+}
+.with-close {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.info-link {
+  margin-left: 20px;
+}
+
+h3 {
+  margin-bottom: 20px;
+}

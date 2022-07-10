@@ -1,0 +1,40 @@
+<div class="youtube-wrapper container has-blurred-white-bg">
+  <h2 class="is-bold">Search Google</h2>
+  <form [formGroup]="searchForm" (ngSubmit)="searchYoutube()">
+    <div class="form-field">
+      <input
+        class="textbox"
+        type="text"
+        placeholder="Search ...."
+        formControlName="searchTerm"
+      />
+    </div>
+    <div class="btns-container">
+      <button class="btn align-end">Search</button>
+    </div>
+  </form>
+</div>
+<!--
+<div class="ng-autocomplete">
+   <ng-autocomplete [data]="results"
+    [searchKeyword]="keyword"
+    placeholder="Enter the State Name"
+    historyIdentifier="states"
+    [itemTemplate]="itemTemplate"
+    [notFoundTemplate]="notFoundTemplate"
+    (inputChanged)="getSuggestions($event)"
+  >
+  </ng-autocomplete>
+
+  <ng-template #itemTemplate let-item>
+    <div class="item">
+      <img src="{{ item.flag }}" height="25" />
+      <span [innerHTML]="item.title"></span> &nbsp; | &nbsp;
+      <small>Population: {{ item.population }}</small>
+    </div>
+  </ng-template>
+
+  <ng-template #notFoundTemplate let-notFound>
+    <div [innerHTML]="notFound"></div>
+  </ng-template> 
+</div> -->

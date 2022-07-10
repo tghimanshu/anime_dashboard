@@ -1,0 +1,25 @@
+<div class="manage-bookmarks-wrapper container">
+  <div class="sidebar">
+    <p class="sidebar-heading">Your Bookmarks</p>
+
+    <div class="sidebar-items">
+      <a
+        [routerLink]="[bookmark.id]"
+        routerLinkActive="selected"
+        class="sidebar-item"
+        *ngFor="let bookmark of bookmarks; let i = index"
+      >
+        <span>
+          {{ bookmark.name }}
+        </span>
+        <i class="material-icons-outlined" (click)="duplicateBookMark(i)"
+          >copy</i
+        >
+      </a>
+    </div>
+  </div>
+
+  <div class="content has-blurred-white-bg">
+    <router-outlet></router-outlet>
+  </div>
+</div>

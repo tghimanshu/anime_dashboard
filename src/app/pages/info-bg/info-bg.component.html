@@ -1,0 +1,23 @@
+<div class="info-bg-wrapper container has-blurred-white-bg">
+  <h2 class="is-bold with-close">
+    <span>About Background</span>
+    <i class="material-icons" (click)="onInfoClose()">close</i>
+  </h2>
+  <div class="info-bg-inner">
+    <h3>
+      <span class="is-bold">Name:</span>
+      <a
+        class="info-link"
+        [href]="
+          'https://wall.alphacoders.com/by_sub_category.php?id=' +
+          background.sub_category_id
+        "
+        >{{ background.sub_category }}</a
+      >
+    </h3>
+    <h3>
+      <span class="is-bold">Image Url:</span>
+      <a class="info-link" [href]="background.url_page">Click Here</a>
+    </h3>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="add-note-wrapper container has-blurred-white-bg">
+  <h2 class="is-bold">Add Note</h2>
+  <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+    <div class="form-field">
+      <input
+        ngModel
+        #titleField="ngModel"
+        name="title"
+        class="textbox"
+        type="text"
+        placeholder="Enter Note Title...."
+        required
+        minlength="3"
+      />
+      <!-- <ng-container *ngIf="showValidationErrors && titleField.invalid">
+        <p *ngIf="titleField.errors?.required">Please Enter a Value</p>
+        <p *ngIf="titleField.errors?.minlength">Insert Atlease 3 Characters</p>
+      </ng-container> -->
+    </div>
+    <div class="form-field">
+      <textarea
+        ngModel
+        name="content"
+        class="textarea"
+        placeholder="Enter Note Content...."
+      ></textarea>
+    </div>
+    <div class="btns-container">
+      <a routerLink="../" class="btn">Cancel</a>
+      <button class="btn align-end">Create Note</button>
+    </div>
+  </form>
+</div>

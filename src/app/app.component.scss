@@ -1,0 +1,90 @@
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  // background-color: #e1e2ed;
+  // background: url("https://wallpaperaccess.com/full/1250843.png") no-repeat
+  //   center center/cover;
+  // background-attachment: fixed;
+}
+
+.bg-img {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.top-section {
+  // background-color: aquamarine;
+  text-align: center;
+  padding: 20px;
+  h1 {
+    font-size: 60px;
+    font-weight: bold;
+    color: #f5f5f5;
+    text-shadow: 0px 1px 7px rgba(black, 0.12);
+  }
+  h2 {
+    font-size: 28px;
+    color: white;
+    text-shadow: 0px 1px 4px rgba(black, 0.1);
+  }
+}
+
+.content-section {
+  // background-color: cadetblue;
+  flex-grow: 1;
+  min-height: 0;
+}
+
+.bottom-section {
+  // background-color: coral;
+  display: flex;
+  app-tabs {
+    margin: auto;
+  }
+}
+
+.change-bg-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  background: rgba(black, 0.1);
+  color: rgba(white, 0.7);
+  &:hover {
+    background: rgba(black, 0.3);
+    color: white;
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+.info-bg-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 10px;
+  background: rgba(black, 0.1);
+  color: rgba(white, 0.7);
+  &:hover {
+    background: rgba(black, 0.3);
+    color: white;
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+app-info-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 300px;
+  background-color: white;
+}

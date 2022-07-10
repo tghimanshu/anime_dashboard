@@ -1,0 +1,28 @@
+.youtube-wrapper {
+  max-height: 100%;
+  overflow: auto;
+  padding: 35px;
+  border-radius: 5px;
+}
+
+.ng-autocomplete {
+  width: 100%;
+  max-width: 600px;
+  display: table;
+  margin: 0 auto;
+}
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  line-height: 45px;
+  height: 45px;
+  padding: 0 16px;
+  text-align: left;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+span {
+  margin-left: 5px;
+}
