@@ -25,6 +25,7 @@ import { TabsComponent } from './pages/tabs/tabs.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { YoutubeComponent } from './pages/search-bar/youtube/youtube.component';
 import { GoogleComponent } from './pages/search-bar/google/google.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { GoogleComponent } from './pages/search-bar/google/google.component';
     HttpClientModule,
     AutocompleteLibModule,
     HotkeyModule.forRoot(),
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

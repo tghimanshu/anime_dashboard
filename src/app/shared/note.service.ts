@@ -1,5 +1,4 @@
-import { Injectable, OnDestroy } from '@angular/core';
-import { fromEvent, Subscription } from 'rxjs';
+import { Injectable } from '@angular/core';
 import { Note } from './note.model';
 
 @Injectable({
@@ -7,21 +6,9 @@ import { Note } from './note.model';
 })
 export class NoteService {
   notes: Note[] = [];
-  storageListenSub: Subscription;
 
   constructor() {
     this.loadState();
-    this.storageListenSub = fromEvent(window, 'storage').subscribe(
-      (event: any) => {
-        if (event.key === 'notes') {
-          this.loadState();
-        }
-      }
-    );
-  }
-
-  ngOnDestroy() {
-    if (this.storageListenSub) this.storageListenSub.unsubscribe();
   }
 
   getNotes() {
@@ -51,14 +38,37 @@ export class NoteService {
   }
 
   saveState() {
-    localStorage.setItem('notes', JSON.stringify(this.notes));
+    console.log('data saved');
+    let data: {
+      notes: Note[];
+      bookmarks: object[];
+      todos: object[];
+    } | null = JSON.parse(localStorage.getItem('data') as string);
+    if (data) {
+      data.notes = this.notes;
+      localStorage.setItem('data', JSON.stringify(data));
+    } else {
+      localStorage.setItem(
+        'data',
+        JSON.stringify({
+          notes: [],
+          bookmarks: [],
+          todos: [],
+        })
+      );
+    }
+    return this.notes;
   }
   loadState() {
     try {
-      const notesInStorage = JSON.parse(localStorage.getItem('notes')!);
-      // if (!notesInStorage) return;
-      this.notes.length = 0; //clear the notes without losing the reference
-      this.notes.push(...notesInStorage);
+      let data: {
+        notes: Note[];
+        bookmarks: object[];
+        todos: object[];
+      } | null = JSON.parse(localStorage.getItem('data') as string);
+      if (data) {
+        this.notes = data.notes as Note[];
+      }
     } catch (e) {
       console.log('Error Loading json form local storage');
       console.log(e);

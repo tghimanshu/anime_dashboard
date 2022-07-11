@@ -24,14 +24,14 @@
     [itemTemplate]="itemTemplate"
     [notFoundTemplate]="notFoundTemplate"
     (inputChanged)="getSuggestions($event)"
+    (selected)="selectedItem($event)"
   >
   </ng-autocomplete>
 
   <ng-template #itemTemplate let-item>
     <div class="item">
-      <img src="{{ item.flag }}" height="25" />
+      <img src="{{ item.thumbnails.default.url }}" width="60" />
       <span [innerHTML]="item.title"></span> &nbsp; | &nbsp;
-      <small>Population: {{ item.population }}</small>
     </div>
   </ng-template>
 

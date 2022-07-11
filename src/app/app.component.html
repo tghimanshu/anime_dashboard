@@ -1,12 +1,9 @@
 <div class="app-wrapper">
   <img [src]="bg" class="bg-img" (load)="onBGImageLoad()" />
-  <div class="btn info-bg-btn" (click)="onBGInfo()" *ngIf="!infoVisible">
+  <div class="btn info-bg-btn" (click)="toggleBGInfo()" *ngIf="!infoVisible">
     <div class="material-icons-outlined">info</div>
   </div>
-  <app-info-bg
-    *ngIf="infoVisible"
-    (closeBGInfo)="onBGInfoClose()"
-  ></app-info-bg>
+  <app-info-bg *ngIf="infoVisible" (closeBGInfo)="toggleBGInfo()"></app-info-bg>
   <button
     class="btn change-bg-btn"
     (click)="changeBGImage()"

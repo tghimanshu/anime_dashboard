@@ -10,6 +10,7 @@ import { Component, HostListener } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { Hotkey, HotkeysService } from 'angular2-hotkeys';
 import { map, Observable, timer } from 'rxjs';
+import { UtilityService } from './shared/utility.service';
 
 @Component({
   selector: 'app-root',
@@ -115,7 +116,11 @@ export class AppComponent {
   bgLocked: boolean = false;
   dateTime!: Observable<Date>;
 
-  constructor(private _hotKeyService: HotkeysService, private router: Router) {
+  constructor(
+    private _hotKeyService: HotkeysService,
+    private router: Router,
+    private utilityService: UtilityService
+  ) {
     _hotKeyService.add([
       new Hotkey(
         'r',
@@ -238,15 +243,15 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    const lsDate = localStorage.getItem('date')!;
+    const lsDate = localStorage.getItem('date') as string;
     const currDate = new Date().getDate().toString();
-    this.dateTime = timer(0, 1000).pipe(map(() => new Date()));
     if (lsDate !== currDate) {
       this.bg = localStorage.setItem('date', currDate)!;
       this.changeBGImage();
     } else {
       this.bg = localStorage.getItem('imageUrl')!;
     }
+    this.dateTime = timer(0, 1000).pipe(map(() => new Date()));
   }
 
   @HostListener('window:keydown:escape')
@@ -259,27 +264,17 @@ export class AppComponent {
     return;
   }
   async changeBGImage() {
-    let pageNo = Math.floor(Math.random() * 500) + 1;
     this.loadingBGImg = true;
-    const result = await fetch(
-      `https://wall.alphacoders.com/api2.0/get.php?auth=0d52ba4842faf8b1e6fbff7313e786d5&method=category&id=3&page=${pageNo}&info_level=2`
-    ).then((data) => data.json());
-    let indexNo = Math.floor(Math.random() * result.wallpapers.length) + 1;
-    // if (this.bg === result.url) return this.changeBGImage();
-    this.bg = result.wallpapers[indexNo].url_image;
-    localStorage.setItem('imageUrl', this.bg);
-    localStorage.setItem(
-      'background',
-      JSON.stringify(result.wallpapers[indexNo])
-    );
+    this.utilityService.getBackgroundImage().subscribe((data) => {
+      this.bg = data;
+      this.loadingBGImg = false;
+    });
   }
   onBGImageLoad() {
     this.loadingBGImg = false;
-  }
-  onBGInfo() {
-    this.infoVisible = true;
-  }
-  onBGInfoClose() {
     this.infoVisible = false;
+  }
+  toggleBGInfo() {
+    this.infoVisible = !this.infoVisible;
   }
 }

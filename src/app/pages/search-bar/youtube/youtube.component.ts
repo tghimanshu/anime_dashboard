@@ -33,4 +33,9 @@ export class YoutubeComponent implements OnInit {
       'https://www.youtube.com/results?search_query=' +
       this.searchForm.value.searchTerm;
   }
+
+  selectedItem(item: any) {
+    let url = 'https://www.youtube.com/watch?v=' + item.id.videoId;
+    location.href = url;
+  }
 }

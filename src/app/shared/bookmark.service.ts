@@ -1,29 +1,14 @@
-import { Injectable, OnDestroy } from '@angular/core';
-import { fromEvent, Subscription } from 'rxjs';
+import { Injectable } from '@angular/core';
 import { Bookmark } from './bookmark.model';
 
 @Injectable({
   providedIn: 'root',
 })
-export class BookmarkService implements OnDestroy {
-  bookmarks: Bookmark[] = [
-    { id: '1', name: 'wiki', url: new URL('https://wikipedia.org') },
-  ];
-  storageListenSub: Subscription;
+export class BookmarkService {
+  bookmarks: Bookmark[] = [];
 
   constructor() {
     this.loadState();
-    this.storageListenSub = fromEvent(window, 'storage').subscribe(
-      (event: any) => {
-        if (event.key === 'notes') {
-          this.loadState();
-        }
-      }
-    );
-  }
-
-  ngOnDestroy() {
-    if (this.storageListenSub) this.storageListenSub.unsubscribe();
   }
 
   getBookmarks() {
@@ -53,20 +38,37 @@ export class BookmarkService implements OnDestroy {
   }
 
   saveState() {
-    localStorage.setItem('notes', JSON.stringify(this.bookmarks));
+    console.log('data saved');
+    let data: {
+      notes: object[];
+      bookmarks: Bookmark[];
+      todos: object[];
+    } | null = JSON.parse(localStorage.getItem('data') as string);
+    if (data) {
+      data.bookmarks = this.bookmarks;
+      localStorage.setItem('data', JSON.stringify(data));
+    } else {
+      localStorage.setItem(
+        'data',
+        JSON.stringify({
+          notes: [],
+          bookmarks: [],
+          todos: [],
+        })
+      );
+    }
+    return this.bookmarks;
   }
   loadState() {
     try {
-      // const bookmarksInStorage = JSON.parse(
-      //   localStorage.getItem('notes')!,
-      //   (key, value) => {
-      //     if (key === 'url') return new URL(value);
-      //     return value;
-      //   }
-      // );
-      // if (!notesInStorage) return;
-      // this.bookmarks.length = 0; //clear the notes without losing the reference
-      // this.bookmarks.push(...bookmarksInStorage);
+      let data: {
+        notes: object[];
+        bookmarks: Bookmark[];
+        todos: object[];
+      } | null = JSON.parse(localStorage.getItem('data') as string);
+      if (data) {
+        this.bookmarks = data.bookmarks as Bookmark[];
+      }
     } catch (e) {
       console.log('Error Loading json form local storage');
       console.log(e);
