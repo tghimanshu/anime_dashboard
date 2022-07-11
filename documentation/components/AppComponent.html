@@ -1,0 +1,1281 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>anime-dashboard documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">anime-dashboard documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  AppComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/app.component.ts</code>
+</p>
+
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-root</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./app.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./app.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#bg" >bg</a>
+                            </li>
+                            <li>
+                                <a href="#bgLocked" >bgLocked</a>
+                            </li>
+                            <li>
+                                <a href="#dateTime" >dateTime</a>
+                            </li>
+                            <li>
+                                <a href="#infoVisible" >infoVisible</a>
+                            </li>
+                            <li>
+                                <a href="#loadingBGImg" >loadingBGImg</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#changeBGImage" >changeBGImage</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onBGImageLoad" >onBGImageLoad</a>
+                            </li>
+                            <li>
+                                <a href="#onBGInfo" >onBGInfo</a>
+                            </li>
+                            <li>
+                                <a href="#onBGInfoClose" >onBGInfoClose</a>
+                            </li>
+                            <li>
+                                <a href="#onEscapePressed" >onEscapePressed</a>
+                            </li>
+                            <li>
+                                <a href="#prepareRoute" >prepareRoute</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#window:keydown:escape" >window:keydown:escape</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_hotKeyService: HotkeysService, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/app/app.component.ts:116</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_hotKeyService</td>
+                                                  
+                                                        <td>
+                                                                    <code>HotkeysService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+    <section>
+    <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="window:keydown:escape"></a>
+                    <span class="name">
+                        <span ><b>window:keydown:escape</b></span>
+                        <a href="#window:keydown:escape"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>window:keydown:escape()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="253"
+                            class="link-to-prism">src/app/app.component.ts:253</a></div>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeBGImage"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>changeBGImage</b></span>
+                        <a href="#changeBGImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>changeBGImage()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="261"
+                            class="link-to-prism">src/app/app.component.ts:261</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="240"
+                            class="link-to-prism">src/app/app.component.ts:240</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onBGImageLoad"></a>
+                    <span class="name">
+                        <span ><b>onBGImageLoad</b></span>
+                        <a href="#onBGImageLoad"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onBGImageLoad()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="276"
+                            class="link-to-prism">src/app/app.component.ts:276</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onBGInfo"></a>
+                    <span class="name">
+                        <span ><b>onBGInfo</b></span>
+                        <a href="#onBGInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onBGInfo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="279"
+                            class="link-to-prism">src/app/app.component.ts:279</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onBGInfoClose"></a>
+                    <span class="name">
+                        <span ><b>onBGInfoClose</b></span>
+                        <a href="#onBGInfoClose"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onBGInfoClose()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="282"
+                            class="link-to-prism">src/app/app.component.ts:282</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onEscapePressed"></a>
+                    <span class="name">
+                        <span ><b>onEscapePressed</b></span>
+                        <a href="#onEscapePressed"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onEscapePressed()</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@HostListener(&#x27;window:keydown:escape&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="253"
+                            class="link-to-prism">src/app/app.component.ts:253</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="prepareRoute"></a>
+                    <span class="name">
+                        <span ><b>prepareRoute</b></span>
+                        <a href="#prepareRoute"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>prepareRoute(outlet: <a href="https://angular.io/api/router/RouterOutlet" target="_blank">RouterOutlet</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="257"
+                            class="link-to-prism">src/app/app.component.ts:257</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>outlet</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/router/RouterOutlet" target="_blank" >RouterOutlet</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bg"></a>
+                    <span class="name">
+                        <span ><b>bg</b></span>
+                        <a href="#bg"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;https://wallpaperaccess.com/full/1250843.png&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="112" class="link-to-prism">src/app/app.component.ts:112</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bgLocked"></a>
+                    <span class="name">
+                        <span ><b>bgLocked</b></span>
+                        <a href="#bgLocked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="115" class="link-to-prism">src/app/app.component.ts:115</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dateTime"></a>
+                    <span class="name">
+                        <span ><b>dateTime</b></span>
+                        <a href="#dateTime"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;Date&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/app/app.component.ts:116</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="infoVisible"></a>
+                    <span class="name">
+                        <span ><b>infoVisible</b></span>
+                        <a href="#infoVisible"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="114" class="link-to-prism">src/app/app.component.ts:114</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadingBGImg"></a>
+                    <span class="name">
+                        <span ><b>loadingBGImg</b></span>
+                        <a href="#loadingBGImg"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="113" class="link-to-prism">src/app/app.component.ts:113</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  animate,
+  group,
+  query,
+  style,
+  transition,
+  trigger,
+} from &#x27;@angular/animations&#x27;;
+import { Component, HostListener } from &#x27;@angular/core&#x27;;
+import { Router, RouterOutlet } from &#x27;@angular/router&#x27;;
+import { Hotkey, HotkeysService } from &#x27;angular2-hotkeys&#x27;;
+import { map, Observable, timer } from &#x27;rxjs&#x27;;
+
+@Component({
+  selector: &#x27;app-root&#x27;,
+  templateUrl: &#x27;./app.component.html&#x27;,
+  styleUrls: [&#x27;./app.component.scss&#x27;],
+  animations: [
+    trigger(&#x27;routeAnim&#x27;, [
+      transition(&#x27;:increment&#x27;, [
+        style({ position: &#x27;relative&#x27;, overflow: &#x27;hidden&#x27; }),
+        query(
+          &#x27;:enter, :leave&#x27;,
+          [
+            style({
+              position: &#x27;absolute&#x27;,
+              top: 0,
+              left: 0,
+              width: &#x27;100%&#x27;,
+              height: &#x27;100%&#x27;,
+              // display: &#x27;block&#x27;,
+            }),
+          ],
+          { optional: true }
+        ),
+        group([
+          query(
+            &#x27;:leave&#x27;,
+            [
+              animate(
+                &#x27;200ms ease-in&#x27;,
+                style({ opacity: 0, transform: &#x27;translateX(-50px)&#x27; })
+              ),
+            ],
+            {
+              optional: true,
+            }
+          ),
+          query(
+            &#x27;:enter&#x27;,
+            [
+              style({ opacity: 0, transform: &#x27;translateX(50px)&#x27; }),
+              animate(
+                &#x27;250ms 120ms ease-out&#x27;,
+                style({ opacity: 1, transform: &#x27;translateX(0)&#x27; })
+              ),
+            ],
+            {
+              optional: true,
+            }
+          ),
+        ]),
+      ]),
+      transition(&#x27;:decrement&#x27;, [
+        style({ position: &#x27;relative&#x27;, overflow: &#x27;hidden&#x27; }),
+        query(
+          &#x27;:enter, :leave&#x27;,
+          [
+            style({
+              position: &#x27;absolute&#x27;,
+              top: 0,
+              left: 0,
+              width: &#x27;100%&#x27;,
+              height: &#x27;100%&#x27;,
+              // display: &#x27;block&#x27;,
+            }),
+          ],
+          { optional: true }
+        ),
+        group([
+          query(
+            &#x27;:leave&#x27;,
+            [
+              animate(
+                &#x27;200ms ease-in&#x27;,
+                style({ opacity: 0, transform: &#x27;translateX(50px)&#x27; })
+              ),
+            ],
+            {
+              optional: true,
+            }
+          ),
+          query(
+            &#x27;:enter&#x27;,
+            [
+              style({ opacity: 0, transform: &#x27;translateX(-50px)&#x27; }),
+              animate(
+                &#x27;250ms 120ms ease-out&#x27;,
+                style({ opacity: 1, transform: &#x27;translateX(0)&#x27; })
+              ),
+            ],
+            {
+              optional: true,
+            }
+          ),
+        ]),
+      ]),
+    ]),
+  ],
+})
+export class AppComponent {
+  bg: string &#x3D; &#x27;https://wallpaperaccess.com/full/1250843.png&#x27;;
+  loadingBGImg!: boolean;
+  infoVisible!: boolean;
+  bgLocked: boolean &#x3D; false;
+  dateTime!: Observable&lt;Date&gt;;
+
+  constructor(private _hotKeyService: HotkeysService, private router: Router) {
+    _hotKeyService.add([
+      new Hotkey(
+        &#x27;r&#x27;,
+        (e: KeyboardEvent, combo: string) &#x3D;&gt; {
+          !this.loadingBGImg &amp;&amp; !this.bgLocked &amp;&amp; this.changeBGImage();
+          return false;
+        },
+        undefined,
+        &#x27;Change Background Image&#x27;
+      ),
+      new Hotkey(
+        &#x27;b&#x27;,
+        (e: KeyboardEvent, combo: string) &#x3D;&gt; {
+          router.navigateByUrl(&#x27;bookmarks&#x27;);
+          return false;
+        },
+        undefined,
+        &#x27;Go to Bookmarks&#x27;
+      ),
+      new Hotkey(
+        &#x27;b a&#x27;,
+        (e: KeyboardEvent, combo: string) &#x3D;&gt; {
+          router.navigateByUrl(&#x27;bookmarks/add&#x27;);
+          return false;
+        },
+        undefined,
+        &#x27;Add Bookmark&#x27;
+      ),
+      new Hotkey(
+        &#x27;b m&#x27;,
+        (e: KeyboardEvent, combo: string) &#x3D;&gt; {
+          router.navigateByUrl(&#x27;bookmarks/manage&#x27;);
+          return false;
+        },
+        undefined,
+        &#x27;Manage Bookmark&#x27;
+      ),
+      new Hotkey(
+        &#x27;t&#x27;,
+        (e: KeyboardEvent, combo: string) &#x3D;&gt; {
+          router.navigateByUrl(&#x27;todos&#x27;);
+          return false;
+        },
+        undefined,
+        &#x27;Go to Todos&#x27;
+      ),
+      new Hotkey(
+        &#x27;t a&#x27;,
+        (e: KeyboardEvent, combo: string) &#x3D;&gt; {
+          router.navigateByUrl(&#x27;todos/add&#x27;);
+          return false;
+        },
+        undefined,
+        &#x27;Add Todos&#x27;
+      ),
+      new Hotkey(
+        &#x27;n&#x27;,
+        (e: KeyboardEvent, combo: string) &#x3D;&gt; {
+          router.navigateByUrl(&#x27;notes&#x27;);
+          return false;
+        },
+        undefined,
+        &#x27;Go to Notes&#x27;
+      ),
+      new Hotkey(
+        &#x27;n a&#x27;,
+        (e: KeyboardEvent, combo: string) &#x3D;&gt; {
+          router.navigateByUrl(&#x27;notes/add&#x27;);
+          return false;
+        },
+        undefined,
+        &#x27;Add Notes&#x27;
+      ),
+      new Hotkey(
+        &#x27;g&#x27;,
+        (e: KeyboardEvent, combo: string) &#x3D;&gt; {
+          router.navigateByUrl(&#x27;google&#x27;);
+          return false;
+        },
+        undefined,
+        &#x27;Search Google&#x27;
+      ),
+      new Hotkey(
+        &#x27;y&#x27;,
+        (e: KeyboardEvent, combo: string) &#x3D;&gt; {
+          router.navigateByUrl(&#x27;youtube&#x27;);
+          return false;
+        },
+        undefined,
+        &#x27;Search Youtube&#x27;
+      ),
+      new Hotkey(
+        &#x27;x&#x27;,
+        (e: KeyboardEvent, combo: string) &#x3D;&gt; {
+          router.navigateByUrl(&#x27;&#x27;);
+          return false;
+        },
+        undefined,
+        &#x27;Go to Home&#x27;
+      ),
+      new Hotkey(
+        &#x27;i&#x27;,
+        (e: KeyboardEvent, combo: string) &#x3D;&gt; {
+          this.infoVisible &#x3D; !this.infoVisible;
+          return false;
+        },
+        undefined,
+        &#x27;Show Image Info&#x27;
+      ),
+      new Hotkey(
+        &#x27;l&#x27;,
+        (e: KeyboardEvent, combo: string) &#x3D;&gt; {
+          this.bgLocked &#x3D; !this.bgLocked;
+          return false;
+        },
+        undefined,
+        &#x27;Lock Background Image&#x27;
+      ),
+    ]);
+  }
+
+  ngOnInit() {
+    const lsDate &#x3D; localStorage.getItem(&#x27;date&#x27;)!;
+    const currDate &#x3D; new Date().getDate().toString();
+    this.dateTime &#x3D; timer(0, 1000).pipe(map(() &#x3D;&gt; new Date()));
+    if (lsDate !&#x3D;&#x3D; currDate) {
+      this.bg &#x3D; localStorage.setItem(&#x27;date&#x27;, currDate)!;
+      this.changeBGImage();
+    } else {
+      this.bg &#x3D; localStorage.getItem(&#x27;imageUrl&#x27;)!;
+    }
+  }
+
+  @HostListener(&#x27;window:keydown:escape&#x27;)
+  onEscapePressed() {
+    window.focus();
+  }
+
+  prepareRoute(outlet: RouterOutlet) {
+    if (outlet.isActivated) return outlet.activatedRouteData[&#x27;tab&#x27;];
+    return;
+  }
+  async changeBGImage() {
+    let pageNo &#x3D; Math.floor(Math.random() * 500) + 1;
+    this.loadingBGImg &#x3D; true;
+    const result &#x3D; await fetch(
+      &#x60;https://wall.alphacoders.com/api2.0/get.php?auth&#x3D;0d52ba4842faf8b1e6fbff7313e786d5&amp;method&#x3D;category&amp;id&#x3D;3&amp;page&#x3D;${pageNo}&amp;info_level&#x3D;2&#x60;
+    ).then((data) &#x3D;&gt; data.json());
+    let indexNo &#x3D; Math.floor(Math.random() * result.wallpapers.length) + 1;
+    // if (this.bg &#x3D;&#x3D;&#x3D; result.url) return this.changeBGImage();
+    this.bg &#x3D; result.wallpapers[indexNo].url_image;
+    localStorage.setItem(&#x27;imageUrl&#x27;, this.bg);
+    localStorage.setItem(
+      &#x27;background&#x27;,
+      JSON.stringify(result.wallpapers[indexNo])
+    );
+  }
+  onBGImageLoad() {
+    this.loadingBGImg &#x3D; false;
+  }
+  onBGInfo() {
+    this.infoVisible &#x3D; true;
+  }
+  onBGInfoClose() {
+    this.infoVisible &#x3D; false;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;app-wrapper&quot;&gt;
+  &lt;img [src]&#x3D;&quot;bg&quot; class&#x3D;&quot;bg-img&quot; (load)&#x3D;&quot;onBGImageLoad()&quot; /&gt;
+  &lt;div class&#x3D;&quot;btn info-bg-btn&quot; (click)&#x3D;&quot;onBGInfo()&quot; *ngIf&#x3D;&quot;!infoVisible&quot;&gt;
+    &lt;div class&#x3D;&quot;material-icons-outlined&quot;&gt;info&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;app-info-bg
+    *ngIf&#x3D;&quot;infoVisible&quot;
+    (closeBGInfo)&#x3D;&quot;onBGInfoClose()&quot;
+  &gt;&lt;/app-info-bg&gt;
+  &lt;button
+    class&#x3D;&quot;btn change-bg-btn&quot;
+    (click)&#x3D;&quot;changeBGImage()&quot;
+    *ngIf&#x3D;&quot;!loadingBGImg&quot;
+    [disabled]&#x3D;&quot;bgLocked&quot;
+  &gt;
+    &lt;div class&#x3D;&quot;material-icons&quot;&gt;refresh&lt;/div&gt;
+  &lt;/button&gt;
+  &lt;div class&#x3D;&quot;top-section&quot;&gt;
+    &lt;h1&gt;{{ dateTime | async | date: &quot;HH:mm&quot; }}&lt;/h1&gt;
+    &lt;h2&gt;{{ dateTime | async | date: &quot;d MMMM y&quot; }}&lt;/h2&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;content-section&quot; [@routeAnim]&#x3D;&quot;prepareRoute(outlet)&quot;&gt;
+    &lt;router-outlet #outlet&#x3D;&quot;outlet&quot;&gt;&lt;/router-outlet&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;bottom-section&quot;&gt;
+    &lt;app-tabs&gt;&lt;/app-tabs&gt;
+  &lt;/div&gt;
+  &lt;!-- &lt;app-notification&gt;&lt;/app-notification&gt; --&gt;
+  &lt;hotkeys-cheatsheet&gt;&lt;/hotkeys-cheatsheet&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./app.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  // background-color: #e1e2ed;
+  // background: url(&quot;https://wallpaperaccess.com/full/1250843.png&quot;) no-repeat
+  //   center center/cover;
+  // background-attachment: fixed;
+}
+
+.bg-img {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.top-section {
+  // background-color: aquamarine;
+  text-align: center;
+  padding: 20px;
+  h1 {
+    font-size: 60px;
+    font-weight: bold;
+    color: #f5f5f5;
+    text-shadow: 0px 1px 7px rgba(black, 0.12);
+  }
+  h2 {
+    font-size: 28px;
+    color: white;
+    text-shadow: 0px 1px 4px rgba(black, 0.1);
+  }
+}
+
+.content-section {
+  // background-color: cadetblue;
+  flex-grow: 1;
+  min-height: 0;
+}
+
+.bottom-section {
+  // background-color: coral;
+  display: flex;
+  app-tabs {
+    margin: auto;
+  }
+}
+
+.change-bg-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  background: rgba(black, 0.1);
+  color: rgba(white, 0.7);
+  &amp;:hover {
+    background: rgba(black, 0.3);
+    color: white;
+  }
+  &amp;:active {
+    transform: translateY(1px);
+  }
+}
+
+.info-bg-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 10px;
+  background: rgba(black, 0.1);
+  color: rgba(white, 0.7);
+  &amp;:hover {
+    background: rgba(black, 0.3);
+    color: white;
+  }
+  &amp;:active {
+    transform: translateY(1px);
+  }
+}
+
+app-info-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 300px;
+  background-color: white;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="app-wrapper">  <img [src]="bg" class="bg-img" (load)="onBGImageLoad()" />  <div class="btn info-bg-btn" (click)="onBGInfo()" *ngIf="!infoVisible">    <div class="material-icons-outlined">info</div>  </div>  <app-info-bg    *ngIf="infoVisible"    (closeBGInfo)="onBGInfoClose()"  ></app-info-bg>  <button    class="btn change-bg-btn"    (click)="changeBGImage()"    *ngIf="!loadingBGImg"    [disabled]="bgLocked"  >    <div class="material-icons">refresh</div>  </button>  <div class="top-section">    <h1>{{ dateTime | async | date: "HH:mm" }}</h1>    <h2>{{ dateTime | async | date: "d MMMM y" }}</h2>  </div>  <div class="content-section" [@routeAnim]="prepareRoute(outlet)">    <router-outlet #outlet="outlet"></router-outlet>  </div>  <div class="bottom-section">    <app-tabs></app-tabs>  </div>  <!-- <app-notification></app-notification> -->  <hotkeys-cheatsheet></hotkeys-cheatsheet></div></div>'
+    var COMPONENTS = [{'name': 'AddBookmarkComponent', 'selector': 'app-add-bookmark'},{'name': 'AddNoteComponent', 'selector': 'app-add-note'},{'name': 'AddTodoComponent', 'selector': 'app-add-todo'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookmarksComponent', 'selector': 'app-bookmarks'},{'name': 'BookmarkTileComponent', 'selector': 'app-bookmark-tile'},{'name': 'EditBookmarkComponent', 'selector': 'app-edit-bookmark'},{'name': 'EditNoteComponent', 'selector': 'app-edit-note'},{'name': 'EditTodoComponent', 'selector': 'app-edit-todo'},{'name': 'GoogleComponent', 'selector': 'app-google'},{'name': 'InfoBgComponent', 'selector': 'app-info-bg'},{'name': 'ManageBookmarksComponent', 'selector': 'app-manage-bookmarks'},{'name': 'NoteCardComponent', 'selector': 'app-note-card'},{'name': 'NotesComponent', 'selector': 'app-notes'},{'name': 'TabsComponent', 'selector': 'app-tabs'},{'name': 'TodoItemComponent', 'selector': 'app-todo-item'},{'name': 'TodosComponent', 'selector': 'app-todos'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AppComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
