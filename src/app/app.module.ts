@@ -5,6 +5,11 @@ import { HotkeyModule } from 'angular2-hotkeys';
 import { HttpClientModule } from '@angular/common/http';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 
+import { ContextMenuModule } from 'primeng/contextmenu';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { PickListModule } from 'primeng/picklist';
+import { ButtonModule } from 'primeng/button';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddBookmarkComponent } from './pages/bookmarks/add-bookmark/add-bookmark.component';
@@ -26,6 +31,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { YoutubeComponent } from './pages/search-bar/youtube/youtube.component';
 import { GoogleComponent } from './pages/search-bar/google/google.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AnilistSearchComponent } from './pages/anilist/anilist-search/anilist-search.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { SettingsTabsComponent } from './pages/settings/settings-tabs/settings-tabs.component';
+import { AnilistAuthenticateComponent } from './pages/anilist/anilist-authenticate/anilist-authenticate.component';
+import { AnilistComponent } from './pages/anilist/anilist.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +57,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     TabsComponent,
     YoutubeComponent,
     GoogleComponent,
+    AnilistSearchComponent,
+    SettingsComponent,
+    SettingsTabsComponent,
+    AnilistAuthenticateComponent,
+    AnilistComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +73,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AutocompleteLibModule,
     HotkeyModule.forRoot(),
     FontAwesomeModule,
+    // PRIME NG
+    ContextMenuModule,
+    InputSwitchModule,
+    PickListModule,
+    ButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

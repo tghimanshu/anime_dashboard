@@ -9,6 +9,7 @@ import {
 import { Component, HostListener } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { Hotkey, HotkeysService } from 'angular2-hotkeys';
+import { MenuItem } from 'primeng/api';
 import { map, Observable, timer } from 'rxjs';
 import { UtilityService } from './shared/utility.service';
 
@@ -115,6 +116,43 @@ export class AppComponent {
   infoVisible!: boolean;
   bgLocked: boolean = false;
   dateTime!: Observable<Date>;
+  quote!: {
+    anime: string;
+    character: string;
+    quote: string;
+  };
+  quotesMenu: MenuItem[] = [
+    {
+      label: 'Change Quote',
+      command: () => {
+        this.utilityService.getQuote().subscribe((data) => {
+          this.quote = data;
+        });
+      },
+    },
+  ];
+  mainMenu: MenuItem[] = [
+    {
+      label: 'Update Bg',
+      command: () => {
+        this.changeBGImage();
+      },
+    },
+    {
+      label: 'lock Bg',
+      command: () => {
+        this.bgLocked = !this.bgLocked;
+        localStorage.setItem('locked', this.bgLocked.toString());
+      },
+    },
+    {
+      separator: true,
+    },
+    {
+      label: 'Settings',
+      routerLink: 'settings',
+    },
+  ];
 
   constructor(
     private _hotKeyService: HotkeysService,
@@ -234,6 +272,7 @@ export class AppComponent {
         'l',
         (e: KeyboardEvent, combo: string) => {
           this.bgLocked = !this.bgLocked;
+          localStorage.setItem('locked', this.bgLocked.toString());
           return false;
         },
         undefined,
@@ -243,15 +282,38 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    const lsDate = localStorage.getItem('date') as string;
-    const currDate = new Date().getDate().toString();
-    if (lsDate !== currDate) {
-      this.bg = localStorage.setItem('date', currDate)!;
-      this.changeBGImage();
-    } else {
-      this.bg = localStorage.getItem('imageUrl')!;
-    }
-    this.dateTime = timer(0, 1000).pipe(map(() => new Date()));
+    this.loadBgAndQuote();
+  }
+
+  loadBgAndQuote() {
+    try {
+      // Load BG
+      const lsDate = localStorage.getItem('date') as string;
+      const currDate = new Date().getDate().toString();
+      if (lsDate !== currDate) {
+        this.bg = localStorage.setItem('date', currDate)!;
+        this.changeBGImage();
+      } else {
+        this.bg = localStorage.getItem('imageUrl')!;
+      }
+
+      // Load Quote
+      if (!localStorage.getItem('quote')) {
+        this.utilityService.getQuote().subscribe((data) => {
+          this.quote = data;
+        });
+      } else {
+        this.quote = JSON.parse(localStorage.getItem('quote') as string);
+      }
+
+      // Load Date And Time
+      this.dateTime = timer(0, 1000).pipe(map(() => new Date()));
+    } catch (error) {}
+  }
+  toggleLock() {
+    this.bgLocked = !this.bgLocked;
+    localStorage.setItem('locked', this.bgLocked.toString());
+    return false;
   }
 
   @HostListener('window:keydown:escape')
@@ -263,11 +325,10 @@ export class AppComponent {
     if (outlet.isActivated) return outlet.activatedRouteData['tab'];
     return;
   }
-  async changeBGImage() {
+  public changeBGImage() {
     this.loadingBGImg = true;
     this.utilityService.getBackgroundImage().subscribe((data) => {
       this.bg = data;
-      this.loadingBGImg = false;
     });
   }
   onBGImageLoad() {

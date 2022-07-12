@@ -3,30 +3,66 @@
     routerLink="bookmarks"
     routerLinkActive="selected"
     class="tab bookmarks-tab"
+    [style.order]="tabs.indexOf('bookmarks')"
+    *ngIf="tabs.includes('bookmarks')"
   >
     <div class="tab-tile">
       <i class="material-icons-outlined">bookmarks</i>
     </div>
   </a>
-  <a routerLink="todos" routerLinkActive="selected" class="tab todos-tab">
+  <a
+    routerLink="todos"
+    routerLinkActive="selected"
+    class="tab todos-tab"
+    *ngIf="tabs.includes('todos')"
+    [style.order]="tabs.indexOf('todos')"
+  >
     <div class="tab-tile">
       <i class="material-icons-outlined">check</i>
     </div>
   </a>
-  <a routerLink="notes" routerLinkActive="selected" class="tab notes-tab">
+  <a
+    routerLink="notes"
+    routerLinkActive="selected"
+    class="tab notes-tab"
+    *ngIf="tabs.includes('notes')"
+    [style.order]="tabs.indexOf('notes')"
+  >
     <div class="tab-tile">
       <i class="material-icons-outlined">notes</i>
     </div>
   </a>
-  <a routerLink="youtube" routerLinkActive="selected" class="tab youtube-tab">
+  <a
+    routerLink="youtube"
+    routerLinkActive="selected"
+    class="tab youtube-tab"
+    *ngIf="tabs.includes('youtube')"
+    [style.order]="tabs.indexOf('youtube')"
+  >
     <div class="tab-tile">
       <fa-icon [icon]="faYoutube"></fa-icon>
     </div>
   </a>
-  <a routerLink="google" routerLinkActive="selected" class="tab youtube-tab">
+  <a
+    routerLink="google"
+    routerLinkActive="selected"
+    class="tab youtube-tab"
+    *ngIf="tabs.includes('google')"
+    [style.order]="tabs.indexOf('google')"
+  >
     <div class="tab-tile">
       <fa-icon [icon]="faGoogle"></fa-icon>
-      <!-- <i class="material-icons">search</i> -->
+    </div>
+  </a>
+  <a
+    routerLink="anilist"
+    routerLinkActive="selected"
+    class="tab youtube-tab"
+    *ngIf="tabs.includes('anilist')"
+    [style.order]="tabs.indexOf('anilist')"
+  >
+    <div class="tab-tile">
+      <fa-icon [icon]="faA"></fa-icon>
     </div>
   </a>
 </div>

@@ -1,0 +1,23 @@
+<div class="settings-tabs-wrapper">
+  <h4>Select Tabs</h4>
+  <p-pickList
+    [source]="sourceProducts"
+    [target]="targetProducts"
+    sourceHeader="Available"
+    targetHeader="Selected"
+    [dragdrop]="true"
+    [responsive]="true"
+    [showSourceControls]="false"
+    [showSourceFilter]="false"
+    [showTargetControls]="false"
+    [showTargetFilter]="false"
+    (onMoveAllToSource)="updateList()"
+    (onMoveAllToTarget)="updateList()"
+    (onMoveToSource)="updateList()"
+    (onMoveToTarget)="updateList()"
+  >
+    <ng-template let-product pTemplate="item">
+      <h5 class="mb-2">{{ product }}</h5>
+    </ng-template>
+  </p-pickList>
+</div>

@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AnilistAuthenticateComponent } from './pages/anilist/anilist-authenticate/anilist-authenticate.component';
+import { AnilistSearchComponent } from './pages/anilist/anilist-search/anilist-search.component';
+import { AnilistComponent } from './pages/anilist/anilist.component';
 import { AddBookmarkComponent } from './pages/bookmarks/add-bookmark/add-bookmark.component';
 import { BookmarksComponent } from './pages/bookmarks/bookmarks/bookmarks.component';
 import { EditBookmarkComponent } from './pages/bookmarks/edit-bookmark/edit-bookmark.component';
@@ -9,6 +12,8 @@ import { EditNoteComponent } from './pages/notes/edit-note/edit-note.component';
 import { NotesComponent } from './pages/notes/notes/notes.component';
 import { GoogleComponent } from './pages/search-bar/google/google.component';
 import { YoutubeComponent } from './pages/search-bar/youtube/youtube.component';
+import { SettingsTabsComponent } from './pages/settings/settings-tabs/settings-tabs.component';
+import { SettingsComponent } from './pages/settings/settings.component';
 import { AddTodoComponent } from './pages/todos/add-todo/add-todo.component';
 import { EditTodoComponent } from './pages/todos/edit-todo/edit-todo.component';
 import { TodosComponent } from './pages/todos/todos/todos.component';
@@ -29,6 +34,20 @@ const routes: Routes = [
   { path: 'notes/:id', component: EditNoteComponent },
   { path: 'youtube', component: YoutubeComponent, data: { tab: 4 } },
   { path: 'google', component: GoogleComponent, data: { tab: 5 } },
+  {
+    path: 'anilist',
+    component: AnilistComponent,
+    data: { tab: 6 },
+    children: [
+      { path: '', component: AnilistSearchComponent },
+      { path: 'authenticate', component: AnilistAuthenticateComponent },
+    ],
+  },
+  {
+    path: 'settings',
+    component: SettingsComponent,
+    children: [{ path: 'tabs', component: SettingsTabsComponent }],
+  },
 ];
 
 @NgModule({

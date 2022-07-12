@@ -1,0 +1,24 @@
+<div class="anilist-search-wrapper container has-blurred-white-bg">
+  <form #form="ngForm">
+    <div class="form-field">
+      <input
+        ngModel
+        #titleField="ngModel"
+        name="title"
+        class="textbox"
+        type="text"
+        placeholder="Enter Note Title...."
+        required
+        minlength="3"
+      />
+    </div>
+  </form>
+  <div class="animes">
+    <p *ngFor="let anime of list">
+      {{ anime.media.title.english }} - {{ anime.progress }}
+      <span *ngIf="anime.media.nextAiringEpisode?.airingAt">
+        {{ anime.media.nextAiringEpisode?.airingAt | date: "d MMMM HH:mm" }}
+      </span>
+    </p>
+  </div>
+</div>
