@@ -12,6 +12,7 @@ import { EditNoteComponent } from './pages/notes/edit-note/edit-note.component';
 import { NotesComponent } from './pages/notes/notes/notes.component';
 import { GoogleComponent } from './pages/search-bar/google/google.component';
 import { YoutubeComponent } from './pages/search-bar/youtube/youtube.component';
+import { SettingsGeneralComponent } from './pages/settings/settings-general/settings-general.component';
 import { SettingsTabsComponent } from './pages/settings/settings-tabs/settings-tabs.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { AddTodoComponent } from './pages/todos/add-todo/add-todo.component';
@@ -46,7 +47,10 @@ const routes: Routes = [
   {
     path: 'settings',
     component: SettingsComponent,
-    children: [{ path: 'tabs', component: SettingsTabsComponent }],
+    children: [
+      { path: 'general', component: SettingsGeneralComponent },
+      { path: 'tabs', component: SettingsTabsComponent },
+    ],
   },
 ];
 

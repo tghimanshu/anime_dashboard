@@ -9,6 +9,7 @@ import { ContextMenuModule } from 'primeng/contextmenu';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { PickListModule } from 'primeng/picklist';
 import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,6 +38,9 @@ import { SettingsTabsComponent } from './pages/settings/settings-tabs/settings-t
 import { AnilistAuthenticateComponent } from './pages/anilist/anilist-authenticate/anilist-authenticate.component';
 import { AnilistComponent } from './pages/anilist/anilist.component';
 
+import { MultiPipe } from './shared/pipes.pipe';
+import { SettingsGeneralComponent } from './pages/settings/settings-general/settings-general.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +66,8 @@ import { AnilistComponent } from './pages/anilist/anilist.component';
     SettingsTabsComponent,
     AnilistAuthenticateComponent,
     AnilistComponent,
+    MultiPipe,
+    SettingsGeneralComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,6 +84,7 @@ import { AnilistComponent } from './pages/anilist/anilist.component';
     InputSwitchModule,
     PickListModule,
     ButtonModule,
+    CardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

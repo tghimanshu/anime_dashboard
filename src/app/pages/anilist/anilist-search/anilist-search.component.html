@@ -1,24 +1,43 @@
 <div class="anilist-search-wrapper container has-blurred-white-bg">
-  <form #form="ngForm">
-    <div class="form-field">
-      <input
-        ngModel
-        #titleField="ngModel"
-        name="title"
-        class="textbox"
-        type="text"
-        placeholder="Enter Note Title...."
-        required
-        minlength="3"
-      />
-    </div>
-  </form>
+  <div class="ng-autocomplete">
+    <ng-autocomplete
+      [data]="list2"
+      [searchKeyword]="keyword"
+      placeholder="Enter the State Name"
+      [itemTemplate]="itemTemplate"
+      [focusFirst]="true"
+      [notFoundTemplate]="notFoundTemplate"
+      (inputChanged)="getSuggestions($event)"
+      (selected)="selectedItem($event)"
+    >
+    </ng-autocomplete>
+
+    <ng-template #itemTemplate let-item>
+      <div class="item">
+        <span [innerHTML]="item.title"></span>
+      </div>
+    </ng-template>
+
+    <ng-template #notFoundTemplate let-notFound>
+      <div [innerHTML]="notFound"></div>
+    </ng-template>
+  </div>
+
   <div class="animes">
-    <p *ngFor="let anime of list">
-      {{ anime.media.title.english }} - {{ anime.progress }}
-      <span *ngIf="anime.media.nextAiringEpisode?.airingAt">
-        {{ anime.media.nextAiringEpisode?.airingAt | date: "d MMMM HH:mm" }}
-      </span>
-    </p>
+    <div class="anime" *ngFor="let anime of list">
+      <img [src]="anime.coverImage.medium" [alt]="anime.title.english" />
+      <div>
+        <h6 class="is-bold">
+          {{ anime.title.english ? anime.title.english : anime.title.romaji }}
+        </h6>
+        <p>
+          EP:
+          {{ anime.progress }}
+        </p>
+        <p *ngIf="anime.airingAt">
+          Next Ep: {{ anime.airingAt | multi | date: "HH:mm, d/MM" }}
+        </p>
+      </div>
+    </div>
   </div>
 </div>
