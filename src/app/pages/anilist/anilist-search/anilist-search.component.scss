@@ -12,28 +12,43 @@
 .animes {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 6px;
   padding-top: 10px;
   .anime {
     display: flex;
-    padding: 10px;
+    padding: 6px;
     background-color: white;
     margin-bottom: 6px;
-    border: 1px solid red;
     img {
-      width: 75px;
+      width: 80px;
     }
-    div {
-      padding: 5px 12px;
+    .anime-info {
+      padding: 2px 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       h6 {
         font-size: 15px;
         margin-bottom: 5px;
         font-weight: bold;
+        line-height: 1.2em;
+        max-height: 2.4em;
         text-overflow: ellipsis;
+        overflow: hidden;
       }
       p {
         font-size: 12px;
         font-weight: bold;
+      }
+      p-tag {
+        margin-right: 5px;
+      }
+      a {
+        color: white;
+      }
+      .anime-btns {
+        display: flex;
+        justify-content: space-between;
       }
     }
   }

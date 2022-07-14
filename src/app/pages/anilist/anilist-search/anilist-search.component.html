@@ -24,19 +24,41 @@
   </div>
 
   <div class="animes">
-    <div class="anime" *ngFor="let anime of list">
+    <div
+      class="anime"
+      *ngFor="let anime of list; let i = index"
+      [style.background]="
+        anime.progress < anime.nextEpisode - 1 ? 'var(--red-100)' : ''
+      "
+    >
       <img [src]="anime.coverImage.medium" [alt]="anime.title.english" />
-      <div>
-        <h6 class="is-bold">
-          {{ anime.title.english ? anime.title.english : anime.title.romaji }}
-        </h6>
-        <p>
-          EP:
-          {{ anime.progress }}
-        </p>
-        <p *ngIf="anime.airingAt">
-          Next Ep: {{ anime.airingAt | multi | date: "HH:mm, d/MM" }}
-        </p>
+      <div class="anime-info">
+        <div>
+          <h6 class="is-bold">
+            {{ anime.title.english ? anime.title.english : anime.title.romaji }}
+          </h6>
+          <span (click)="updateAnime(i, anime.id, anime.progress - 1)">
+            <p-tag> - </p-tag>
+          </span>
+          <p-tag severity="warning">
+            {{ anime.progress }}
+          </p-tag>
+          <span (click)="updateAnime(i, anime.id, anime.progress + 1)">
+            <p-tag> + </p-tag>
+          </span>
+          <p *ngIf="anime.airingAt">
+            Next Ep: {{ "(" + anime.nextEpisode + ")" }}
+            {{ anime.airingAt | multi | date: "HH:mm, d/MM" }}
+          </p>
+        </div>
+        <div class="anime-btns">
+          <p-tag severity="primary">
+            <a [href]="'https://anipass.live/anime/' + anime.id"> Watch Now </a>
+          </p-tag>
+          <p-tag severity="secondary">
+            <a [href]="'https://anilist.co/anime/' + anime.id"> Anilist </a>
+          </p-tag>
+        </div>
       </div>
     </div>
   </div>

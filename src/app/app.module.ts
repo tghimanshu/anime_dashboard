@@ -10,6 +10,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { PickListModule } from 'primeng/picklist';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { TagModule } from 'primeng/tag';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -85,6 +86,7 @@ import { SettingsGeneralComponent } from './pages/settings/settings-general/sett
     PickListModule,
     ButtonModule,
     CardModule,
+    TagModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -6,12 +6,14 @@ import {
 } from 'src/app/shared/anilist.service';
 
 interface Info {
+  id: number;
   progress: number;
   title: Title;
   episodes: number;
   coverImage: CoverImage;
   timeUntilAiring: number;
   airingAt: number;
+  nextEpisode: number;
 }
 
 @Component({
@@ -45,5 +47,15 @@ export class AnilistSearchComponent implements OnInit {
   selectedItem(item: any) {
     let url = 'https://anilist.co/anime/' + item.id;
     location.href = url;
+  }
+  updateAnime(i: number, animeId: number, progress: number) {
+    let oldProgress = this.list[i].progress;
+    this.list[i].progress = progress;
+    this.anilistService.updateEpisodeCount(animeId, progress).subscribe({
+      next: (data) => {},
+      error: () => {
+        this.list[i].progress = oldProgress;
+      },
+    });
   }
 }

@@ -27,6 +27,7 @@ export interface AnimeEntry {
 }
 
 export interface Media {
+  id: number;
   title: Title;
   episodes: number | null;
   nextAiringEpisode: NextAiringEpisode | null;
@@ -43,6 +44,7 @@ export interface NextAiringEpisode {
   id: number | null;
   airingAt: number | null;
   timeUntilAiring: number | null;
+  episode: number | null;
 }
 
 export interface CoverImage {
@@ -118,6 +120,7 @@ export class AnilistService {
         progress
 
         media {
+          id
           title {
             romaji
             english
@@ -129,6 +132,7 @@ export class AnilistService {
             id
             airingAt
             timeUntilAiring
+            episode
           }
           coverImage {
             extraLarge
@@ -191,6 +195,7 @@ export class AnilistService {
         map((data) => {
           let media = data.data.MediaListCollection.lists[0].entries;
           return media.map((val) => ({
+            id: val.media.id,
             progress: val.progress,
             title: val.media.title,
             episodes: val.media.episodes as number,
@@ -205,14 +210,51 @@ export class AnilistService {
                 ? 0
                 : val.media.nextAiringEpisode.airingAt
               : 0,
+            nextEpisode: val.media.nextAiringEpisode
+              ? val.media.nextAiringEpisode.episode === null
+                ? (val.media.episodes as number)
+                : val.media.nextAiringEpisode.episode
+              : 0,
           }));
         }),
         map((data) => {
           return [
-            ...data.filter((val) => val.timeUntilAiring !== 0),
+            ...data.filter(
+              (val) =>
+                val.timeUntilAiring !== 0 && val.progress < val.nextEpisode - 1
+            ),
+            ...data.filter(
+              (val) =>
+                val.timeUntilAiring !== 0 && val.progress >= val.nextEpisode - 1
+            ),
             ...data.filter((val) => val.timeUntilAiring === 0),
           ];
         })
       );
+  }
+
+  updateEpisodeCount(animeId: number, progress: number) {
+    let query = `
+      mutation SaveMediaListEntry($animeId: Int, $progress: Int) {
+        SaveMediaListEntry(mediaId: $animeId, progress: $progress){status, progress}
+      }`;
+
+    return this.http.post(
+      'https://graphql.anilist.co',
+      {
+        query,
+        variables: {
+          animeId,
+          progress: progress,
+        },
+      },
+      {
+        headers: new HttpHeaders({
+          Authorization: 'Bearer ' + localStorage.getItem('anilist_token'),
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        }),
+      }
+    );
   }
 }

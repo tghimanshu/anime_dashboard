@@ -251,6 +251,15 @@ export class AppComponent {
         'Search Youtube'
       ),
       new Hotkey(
+        'a',
+        (e: KeyboardEvent, combo: string) => {
+          router.navigateByUrl('anilist');
+          return false;
+        },
+        undefined,
+        'Go to Anilist'
+      ),
+      new Hotkey(
         'x',
         (e: KeyboardEvent, combo: string) => {
           router.navigateByUrl('');
