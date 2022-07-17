@@ -12,6 +12,8 @@ import { EditNoteComponent } from './pages/notes/edit-note/edit-note.component';
 import { NotesComponent } from './pages/notes/notes/notes.component';
 import { GoogleComponent } from './pages/search-bar/google/google.component';
 import { YoutubeComponent } from './pages/search-bar/youtube/youtube.component';
+import { SettingsAnilistComponent } from './pages/settings/settings-anilist/settings-anilist.component';
+import { SettingsBackgroundComponent } from './pages/settings/settings-background/settings-background.component';
 import { SettingsGeneralComponent } from './pages/settings/settings-general/settings-general.component';
 import { SettingsTabsComponent } from './pages/settings/settings-tabs/settings-tabs.component';
 import { SettingsComponent } from './pages/settings/settings.component';
@@ -50,6 +52,8 @@ const routes: Routes = [
     children: [
       { path: 'general', component: SettingsGeneralComponent },
       { path: 'tabs', component: SettingsTabsComponent },
+      { path: 'background', component: SettingsBackgroundComponent },
+      { path: 'anilist', component: SettingsAnilistComponent },
     ],
   },
 ];

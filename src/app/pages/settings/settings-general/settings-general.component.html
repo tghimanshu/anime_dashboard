@@ -1,10 +1,30 @@
 <div class="settings-general-wrapper">
   <div class="switch">
-    <p-inputSwitch></p-inputSwitch>
+    <p-inputSwitch
+      [(ngModel)]="generalSettings.showTabs"
+      (ngModelChange)="updateSettings()"
+    ></p-inputSwitch>
     <label>Show Dock Menu</label>
   </div>
   <div class="switch">
-    <p-inputSwitch></p-inputSwitch>
+    <p-inputSwitch
+      [(ngModel)]="generalSettings.showQuote"
+      (ngModelChange)="updateSettings()"
+    ></p-inputSwitch>
     <label>Show Quote </label>
+  </div>
+  <div class="switch">
+    <p-inputSwitch
+      [(ngModel)]="generalSettings.showInfoBtn"
+      (ngModelChange)="updateSettings()"
+    ></p-inputSwitch>
+    <label>Show Info Button</label>
+  </div>
+  <div class="switch">
+    <p-inputSwitch
+      [(ngModel)]="generalSettings.showReloadBtn"
+      (ngModelChange)="updateSettings()"
+    ></p-inputSwitch>
+    <label>Show Reload Button </label>
   </div>
 </div>

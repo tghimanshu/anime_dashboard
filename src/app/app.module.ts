@@ -41,6 +41,9 @@ import { AnilistComponent } from './pages/anilist/anilist.component';
 
 import { MultiPipe } from './shared/pipes.pipe';
 import { SettingsGeneralComponent } from './pages/settings/settings-general/settings-general.component';
+import { SettingsBackgroundComponent } from './pages/settings/settings-background/settings-background.component';
+import { SettingsAnilistComponent } from './pages/settings/settings-anilist/settings-anilist.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -69,6 +72,8 @@ import { SettingsGeneralComponent } from './pages/settings/settings-general/sett
     AnilistComponent,
     MultiPipe,
     SettingsGeneralComponent,
+    SettingsBackgroundComponent,
+    SettingsAnilistComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,6 +92,7 @@ import { SettingsGeneralComponent } from './pages/settings/settings-general/sett
     ButtonModule,
     CardModule,
     TagModule,
+    ScrollingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

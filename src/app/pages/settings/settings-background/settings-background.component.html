@@ -1,0 +1,32 @@
+<div class="settings-background-wrapper">
+  <h5>Background Settings</h5>
+  <form>
+    <label for="">Alplacoders Api Token</label>
+    <input
+      type="text"
+      class="textbox"
+      placeholder="Enter API Token..."
+      [(ngModel)]="background.apiKey"
+      (change)="updateSettings()"
+      name="apiKey"
+    />
+    <div *ngIf="background.category">
+      <label for="">Categories</label>
+      {{ background.category.id }}
+      <select
+        class="textbox"
+        [(ngModel)]="background.category.id"
+        (change)="updateSettings()"
+        name="category"
+      >
+        <option
+          *ngFor="let category of categories"
+          [value]="category.id"
+          [selected]="category.id === background.category.id"
+        >
+          {{ category.name }}
+        </option>
+      </select>
+    </div>
+  </form>
+</div>

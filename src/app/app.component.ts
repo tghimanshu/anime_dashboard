@@ -10,7 +10,8 @@ import { Component, HostListener } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { Hotkey, HotkeysService } from 'angular2-hotkeys';
 import { MenuItem } from 'primeng/api';
-import { map, Observable, timer } from 'rxjs';
+import { map, Observable, Subscription, timer } from 'rxjs';
+import { GeneralSettings, SettingsService } from './shared/settings.service';
 import { UtilityService } from './shared/utility.service';
 
 @Component({
@@ -20,12 +21,10 @@ import { UtilityService } from './shared/utility.service';
   animations: [
     trigger('routeAnim', [
       transition(':increment', [
-        style({ position: 'relative', overflow: 'hidden' }),
         query(
           ':enter, :leave',
           [
             style({
-              position: 'absolute',
               top: 0,
               left: 0,
               width: '100%',
@@ -64,12 +63,10 @@ import { UtilityService } from './shared/utility.service';
         ]),
       ]),
       transition(':decrement', [
-        style({ position: 'relative', overflow: 'hidden' }),
         query(
           ':enter, :leave',
           [
             style({
-              position: 'absolute',
               top: 0,
               left: 0,
               width: '100%',
@@ -121,6 +118,7 @@ export class AppComponent {
     character: string;
     quote: string;
   };
+  generalSettings!: GeneralSettings;
   quotesMenu: MenuItem[] = [
     {
       label: 'Change Quote',
@@ -131,6 +129,7 @@ export class AppComponent {
       },
     },
   ];
+  subscription!: Subscription;
   mainMenu: MenuItem[] = [
     {
       label: 'Update Bg',
@@ -157,7 +156,8 @@ export class AppComponent {
   constructor(
     private _hotKeyService: HotkeysService,
     private router: Router,
-    private utilityService: UtilityService
+    private utilityService: UtilityService,
+    private settingsService: SettingsService
   ) {
     _hotKeyService.add([
       new Hotkey(
@@ -260,6 +260,15 @@ export class AppComponent {
         'Go to Anilist'
       ),
       new Hotkey(
+        's',
+        (e: KeyboardEvent, combo: string) => {
+          router.navigateByUrl('settings');
+          return false;
+        },
+        undefined,
+        'Go to Settings'
+      ),
+      new Hotkey(
         'x',
         (e: KeyboardEvent, combo: string) => {
           router.navigateByUrl('');
@@ -291,7 +300,17 @@ export class AppComponent {
   }
 
   ngOnInit() {
+    this.settingsService.loadSettings();
+    this.subscription = this.settingsService.settingsSubject.subscribe(
+      (settings) => {
+        this.generalSettings = settings.general;
+      }
+    );
     this.loadBgAndQuote();
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   loadBgAndQuote() {

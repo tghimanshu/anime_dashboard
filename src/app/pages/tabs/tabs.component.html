@@ -3,8 +3,8 @@
     routerLink="bookmarks"
     routerLinkActive="selected"
     class="tab bookmarks-tab"
-    [style.order]="tabs.indexOf('bookmarks')"
-    *ngIf="tabs.includes('bookmarks')"
+    [style.order]="tabs.indexOf(Tabs.bookmarks)"
+    *ngIf="tabs.includes(Tabs.bookmarks)"
   >
     <div class="tab-tile">
       <i class="material-icons-outlined">bookmarks</i>
@@ -14,8 +14,8 @@
     routerLink="todos"
     routerLinkActive="selected"
     class="tab todos-tab"
-    *ngIf="tabs.includes('todos')"
-    [style.order]="tabs.indexOf('todos')"
+    *ngIf="tabs.includes(Tabs.todos)"
+    [style.order]="tabs.indexOf(Tabs.todos)"
   >
     <div class="tab-tile">
       <i class="material-icons-outlined">check</i>
@@ -25,8 +25,8 @@
     routerLink="notes"
     routerLinkActive="selected"
     class="tab notes-tab"
-    *ngIf="tabs.includes('notes')"
-    [style.order]="tabs.indexOf('notes')"
+    *ngIf="tabs.includes(Tabs.notes)"
+    [style.order]="tabs.indexOf(Tabs.notes)"
   >
     <div class="tab-tile">
       <i class="material-icons-outlined">notes</i>
@@ -36,8 +36,8 @@
     routerLink="youtube"
     routerLinkActive="selected"
     class="tab youtube-tab"
-    *ngIf="tabs.includes('youtube')"
-    [style.order]="tabs.indexOf('youtube')"
+    *ngIf="tabs.includes(Tabs.youtube)"
+    [style.order]="tabs.indexOf(Tabs.youtube)"
   >
     <div class="tab-tile">
       <fa-icon [icon]="faYoutube"></fa-icon>
@@ -47,8 +47,8 @@
     routerLink="google"
     routerLinkActive="selected"
     class="tab youtube-tab"
-    *ngIf="tabs.includes('google')"
-    [style.order]="tabs.indexOf('google')"
+    *ngIf="tabs.includes(Tabs.google)"
+    [style.order]="tabs.indexOf(Tabs.google)"
   >
     <div class="tab-tile">
       <fa-icon [icon]="faGoogle"></fa-icon>
@@ -58,8 +58,8 @@
     routerLink="anilist"
     routerLinkActive="selected"
     class="tab youtube-tab"
-    *ngIf="tabs.includes('anilist')"
-    [style.order]="tabs.indexOf('anilist')"
+    *ngIf="tabs.includes(Tabs.anilist)"
+    [style.order]="tabs.indexOf(Tabs.anilist)"
   >
     <div class="tab-tile">
       <fa-icon [icon]="faA"></fa-icon>

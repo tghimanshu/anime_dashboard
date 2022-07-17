@@ -1,14 +1,18 @@
 <p-contextMenu [global]="true" [model]="mainMenu"></p-contextMenu>
 <div class="app-wrapper">
   <img [src]="bg" class="bg-img" (load)="onBGImageLoad()" />
-  <div class="btn info-bg-btn" (click)="toggleBGInfo()" *ngIf="!infoVisible">
+  <div
+    class="btn info-bg-btn"
+    (click)="toggleBGInfo()"
+    *ngIf="!infoVisible && generalSettings.showInfoBtn"
+  >
     <div class="material-icons-outlined">info</div>
   </div>
   <app-info-bg *ngIf="infoVisible" (closeBGInfo)="toggleBGInfo()"></app-info-bg>
   <button
     class="btn change-bg-btn"
     (click)="changeBGImage()"
-    *ngIf="!loadingBGImg"
+    *ngIf="!loadingBGImg && generalSettings.showReloadBtn"
     [disabled]="bgLocked"
   >
     <div class="material-icons">refresh</div>
@@ -16,17 +20,14 @@
   <div class="top-section">
     <h1>{{ dateTime | async | date: "HH:mm" }}</h1>
     <h2>{{ dateTime | async | date: "d MMMM y" }}</h2>
-    <!-- <p style="background-color: red">{{ quote.quote }}</p>
-    <p style="background-color: red">{{ quote.anime }}</p>
-    <p style="background-color: red">{{ quote.character }}</p> -->
   </div>
   <div class="content-section" [@routeAnim]="prepareRoute(outlet)">
     <router-outlet #outlet="outlet"></router-outlet>
   </div>
   <div class="bottom-section">
-    <app-tabs></app-tabs>
+    <app-tabs *ngIf="this.generalSettings.showTabs"></app-tabs>
   </div>
-  <ng-template [ngIf]="quote">
+  <ng-template [ngIf]="quote && generalSettings.showQuote">
     <p-contextMenu [target]="q" [model]="quotesMenu"></p-contextMenu>
     <div #q class="anime-quote-div">
       <p class="quote">
