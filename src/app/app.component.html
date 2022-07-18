@@ -18,7 +18,7 @@
     <div class="material-icons">refresh</div>
   </button>
   <div class="top-section">
-    <h1>{{ dateTime | async | date: "HH:mm" }}</h1>
+    <h1>{{ dateTime | async | date: "shortTime" }}</h1>
     <h2>{{ dateTime | async | date: "d MMMM y" }}</h2>
   </div>
   <div class="content-section" [@routeAnim]="prepareRoute(outlet)">
