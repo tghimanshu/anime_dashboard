@@ -268,6 +268,43 @@ export class AppComponent {
         undefined,
         'Go to Settings'
       ),
+      // Settings ---
+      new Hotkey(
+        's g',
+        (e: KeyboardEvent, combo: string) => {
+          router.navigateByUrl('settings/general');
+          return false;
+        },
+        undefined,
+        'Go to Settings/General'
+      ),
+      new Hotkey(
+        's t',
+        (e: KeyboardEvent, combo: string) => {
+          router.navigateByUrl('settings/tabs');
+          return false;
+        },
+        undefined,
+        'Go to Settings/Tabs'
+      ),
+      new Hotkey(
+        's b',
+        (e: KeyboardEvent, combo: string) => {
+          router.navigateByUrl('settings/background');
+          return false;
+        },
+        undefined,
+        'Go to Settings/Background'
+      ),
+      new Hotkey(
+        's a',
+        (e: KeyboardEvent, combo: string) => {
+          router.navigateByUrl('settings/anilist');
+          return false;
+        },
+        undefined,
+        'Go to Settings/Anilist'
+      ),
       new Hotkey(
         'x',
         (e: KeyboardEvent, combo: string) => {
