@@ -1,0 +1,50 @@
+<div id="audio-player">
+  <div
+    class="disc"
+    [ngClass]="{
+      spin: isPlaying
+    }"
+  >
+    <!-- <audio controls="controls" [src]="url"></audio> -->
+  </div>
+  <div class="info">
+    <marquee>{{
+      audio.src
+        .split("/")
+        [audio.src.split("/").length - 1].split("%20")
+        .join(" ")
+    }}</marquee>
+    <!-- <p>hello world</p> -->
+    <div class="progress-div">
+      <div>{{ audio.currentTime | multi | date: "mm:ss":"UTC" }}</div>
+      <div
+        class="progress"
+        #elem
+        (click)="seek($event, elem.offsetWidth)"
+        (dragend)="seek($event, elem.offsetWidth)"
+      >
+        <div
+          class="time"
+          [style.width]="(audio.currentTime * 100) / audio.duration + '%'"
+        ></div>
+      </div>
+      <div>{{ audio.duration * 1000 | date: "mm:ss":"UTC" }}</div>
+    </div>
+    <div class="audio-controls">
+      <span (click)="repeatChange($event)" class="material-symbols-outlined"
+        >repeat</span
+      >
+      <span class="material-symbols-outlined">skip_previous</span>
+      <span (click)="playPause($event)" class="material-symbols-outlined"
+        >play_arrow</span
+      >
+      <!-- <span class="material-symbols-outlined">pause</span> -->
+      <span class="material-symbols-outlined">skip_next</span>
+      <span class="material-symbols-outlined">shuffle</span>
+      <span (click)="volumeChange($event)" class="material-symbols-outlined"
+        >volume_up</span
+      >
+      <!-- <span class="material-symbols-outlined">volume_off</span> -->
+    </div>
+  </div>
+</div>

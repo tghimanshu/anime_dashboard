@@ -44,6 +44,7 @@ import { SettingsGeneralComponent } from './pages/settings/settings-general/sett
 import { SettingsBackgroundComponent } from './pages/settings/settings-background/settings-background.component';
 import { SettingsAnilistComponent } from './pages/settings/settings-anilist/settings-anilist.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { AudioPlayerComponent } from './pages/audio-player/audio-player.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     SettingsGeneralComponent,
     SettingsBackgroundComponent,
     SettingsAnilistComponent,
+    AudioPlayerComponent,
   ],
   imports: [
     BrowserModule,

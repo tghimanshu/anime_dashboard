@@ -24,17 +24,24 @@
   <div class="content-section" [@routeAnim]="prepareRoute(outlet)">
     <router-outlet #outlet="outlet"></router-outlet>
   </div>
+  <div class="audio-player-div">
+    <app-audio-player></app-audio-player>
+  </div>
   <div class="bottom-section">
     <app-tabs *ngIf="this.generalSettings.showTabs"></app-tabs>
   </div>
   <ng-template [ngIf]="quote && generalSettings.showQuote">
-    <p-contextMenu [target]="q" [model]="quotesMenu"></p-contextMenu>
     <div #q class="anime-quote-div">
       <p class="quote">
         {{ quote.quote }}
       </p>
       <p class="info">~ {{ quote.character }}, {{ quote.anime }}</p>
     </div>
+    <p-contextMenu
+      [global]="false"
+      [target]="q"
+      [model]="quotesMenu"
+    ></p-contextMenu>
   </ng-template>
   <!-- <app-notification></app-notification> -->
   <hotkeys-cheatsheet></hotkeys-cheatsheet>
