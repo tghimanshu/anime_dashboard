@@ -18,9 +18,7 @@ export class AudioPlayerComponent implements OnInit {
   ngOnInit(): void {
     this.musicService.getAuth().subscribe((data: any) => {
       this.url = data.previewURL;
-      this.audio.src = data.previewURL;
-      // this.audio.src =
-      //   'https://talkglitz.media/wp-content/uploads/2019/05/Shawn_Mendes_-_If_I_Cant_Have_You_talkglitz.tv.mp3';
+      // this.audio.src = data.previewURL;
       this.audio.src =
         "http://www.miyako.pro/files/Music/Yukito's%201001%20Anime%20OPs%20&%20EDs/Naruto%20-%2004%20-%20OP4%20-%20GO!!!.mp3";
     });
