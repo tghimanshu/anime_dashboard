@@ -6,7 +6,6 @@
   width: 100px;
   max-width: 400px;
   border-radius: 50px 50px 50px 50px;
-  overflow: hidden;
   transform-origin: 50px 50px;
   transform: rotate(-90deg);
 }
@@ -43,7 +42,8 @@
   z-index: 1;
   border-radius: 50px 50px 50px 50px;
   transition: left 1s;
-  marquee {
+  marquee,
+  h1 {
     margin: 5px 0 0 0;
     font-size: 1.2em;
   }
@@ -52,6 +52,7 @@
   }
 }
 .disc:hover + .info,
+.pin:hover + .disc + .info,
 .info:hover {
   animation: show 1s forwards;
 }
@@ -132,4 +133,27 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.pin {
+  position: absolute;
+  background: rgba(black, 0.3);
+  top: 0;
+  left: 0;
+  padding: 4px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.pinActive {
+  background-color: white;
+  color: black;
+}
+
+.pinnedShow {
+  animation: show 1s forwards;
+}
+.pinnedShowPlayer {
+  animation: showPlayer 1s forwards;
 }

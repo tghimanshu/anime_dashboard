@@ -1,19 +1,40 @@
-<div id="audio-player">
+<div
+  id="audio-player"
+  [ngClass]="{
+    pinnedShowPlayer: pinned
+  }"
+>
+  <div
+    class="pin"
+    (click)="pinPlayer()"
+    [ngClass]="{
+      pinActive: pinned
+    }"
+  >
+    <span class="material-symbols-outlined"> push_pin </span>
+  </div>
   <div
     class="disc"
     [ngClass]="{
-      spin: isPlaying
+      spin: !this.audio.paused
     }"
   >
     <!-- <audio controls="controls" [src]="url"></audio> -->
   </div>
-  <div class="info">
-    <marquee>{{
-      audio.src
-        .split("/")
-        [audio.src.split("/").length - 1].split("%20")
-        .join(" ")
-    }}</marquee>
+  <div
+    class="info"
+    [ngClass]="{
+      pinnedShow: pinned
+    }"
+  >
+    <h1>
+      {{
+        audio.src
+          .split("/")
+          [audio.src.split("/").length - 1].split("%20")
+          .join(" ")
+      }}
+    </h1>
     <!-- <p>hello world</p> -->
     <div class="progress-div">
       <div>{{ audio.currentTime | multi | date: "mm:ss":"UTC" }}</div>
@@ -34,13 +55,19 @@
       <span (click)="repeatChange($event)" class="material-symbols-outlined"
         >repeat</span
       >
-      <span class="material-symbols-outlined">skip_previous</span>
-      <span (click)="playPause($event)" class="material-symbols-outlined"
-        >play_arrow</span
+      <span class="material-symbols-outlined" (click)="previousSong()"
+        >skip_previous</span
       >
+      <span (click)="playPause($event)" class="material-symbols-outlined">{{
+        audio.paused ? "play_arrow" : "pause"
+      }}</span>
       <!-- <span class="material-symbols-outlined">pause</span> -->
-      <span class="material-symbols-outlined">skip_next</span>
-      <span class="material-symbols-outlined">shuffle</span>
+      <span class="material-symbols-outlined" (click)="nextSong()"
+        >skip_next</span
+      >
+      <span class="material-symbols-outlined" (click)="onShuffle()">{{
+        shuffle ? "shuffle_on" : "shuffle"
+      }}</span>
       <span (click)="volumeChange($event)" class="material-symbols-outlined"
         >volume_up</span
       >

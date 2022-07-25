@@ -12,12 +12,15 @@ export class MusicService {
   getAuth() {
     return this.http
       .get<{ tracks: object[] }>(
-        'https://api.napster.com/v2.1/tracks/top?apikey=ZTk2YjY4MjMtMDAzYy00MTg4LWE2MjYtZDIzNjJmMmM0YTdm'
+        'https://api.napster.com/v2.2/artists/art.41226138/tracks?limit=11&apikey=YTkxZTRhNzAtODdlNy00ZjMzLTg0MWItOTc0NmZmNjU4Yzk4'
       )
       .pipe(
         map((data) => {
           return data.tracks[0];
         })
       );
+  }
+  getMusic() {
+    return this.http.get<{ name: string }[]>('/assets/musicList.json');
   }
 }
