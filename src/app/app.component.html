@@ -1,6 +1,6 @@
 <p-contextMenu [global]="true" [model]="mainMenu"></p-contextMenu>
 <div class="app-wrapper">
-  <img [src]="bg" class="bg-img" (load)="onBGImageLoad()" />
+  <img [src]="bg" class="bg-img" #img (load)="onBGImageLoad(img)" />
   <div
     class="btn info-bg-btn"
     (click)="toggleBGInfo()"
