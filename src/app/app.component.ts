@@ -130,6 +130,7 @@ export class AppComponent {
     },
   ];
   subscription!: Subscription;
+  showCtrlP: boolean = false;
   mainMenu: MenuItem[] = [
     {
       label: 'Update Bg',
@@ -333,6 +334,19 @@ export class AppComponent {
         undefined,
         'Lock Background Image'
       ),
+      new Hotkey(
+        ['ctrl+p', 'ctrl+space'],
+        (e: KeyboardEvent, combo: string) => {
+          e.cancelBubble = true;
+          e.preventDefault();
+
+          e.stopImmediatePropagation();
+          this.showCtrlP = !this.showCtrlP;
+          return false;
+        },
+        undefined,
+        'Change Background Image'
+      ),
     ]);
   }
 
@@ -400,35 +414,11 @@ export class AppComponent {
   onBGImageLoad(img: HTMLImageElement) {
     this.loadingBGImg = false;
     this.infoVisible = false;
-
-    var colorSum = 0;
-    let img2 = new Image();
-    img2.src = this.bg + '?' + new Date().getTime();
-    var canvas: HTMLCanvasElement = document.createElement('canvas');
-    canvas.width = img2.width;
-    canvas.height = img2.height;
-
-    var ctx: any = canvas.getContext('2d');
-    ctx.drawImage(img, 0, 0);
-
-    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-    // var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    // var data = imageData.data;
-    // var r, g, b, avg;
-
-    // for (var x = 0, len = data.length; x < len; x += 4) {
-    //   r = data[x];
-    //   g = data[x + 1];
-    //   b = data[x + 2];
-
-    //   avg = Math.floor((r + g + b) / 3);
-    //   colorSum += avg;
-    // }
-
-    // var brightness = Math.floor(colorSum / (img.width * img.height));
   }
   toggleBGInfo() {
     this.infoVisible = !this.infoVisible;
+  }
+  disableCtrlP() {
+    this.showCtrlP = false;
   }
 }

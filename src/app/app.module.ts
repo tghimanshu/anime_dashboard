@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HotkeyModule } from 'angular2-hotkeys';
 import { HttpClientModule } from '@angular/common/http';
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 
 import { ContextMenuModule } from 'primeng/contextmenu';
 
@@ -20,6 +21,7 @@ import { SearchModule } from './modules/search/search.module';
 import { SettingsModule } from './modules/settings/settings.module';
 import { CommonsModule } from './modules/commons/commons.module';
 import { AnilistModule } from './modules/anilist/anilist.module';
+import { CtrlPComponent } from './pages/ctrl-p/ctrl-p.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { AnilistModule } from './modules/anilist/anilist.module';
     InfoBgComponent,
     TabsComponent,
     AudioPlayerComponent,
+    CtrlPComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import { AnilistModule } from './modules/anilist/anilist.module';
     HttpClientModule,
     HotkeyModule.forRoot(),
     FontAwesomeModule,
+    AutocompleteLibModule,
     // PRIME NG
     ContextMenuModule,
     BookmarksModule,

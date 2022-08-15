@@ -1,0 +1,21 @@
+<div class="ctrl-p-container">
+  <ng-autocomplete
+    class="ctrl-p-input"
+    [data]="options"
+    searchKeyword="title"
+    placeholder="Enter Command"
+    [itemTemplate]="itemTemplate"
+    [notFoundTemplate]="notFoundTemplate"
+    [focusFirst]="true"
+    (selected)="selectedOption($event)"
+    #textField
+  ></ng-autocomplete>
+</div>
+
+<ng-template #itemTemplate let-item>
+  <div class="item">
+    <span [innerHTML]="item.title"></span>
+    <span [innerHTML]="item.shortcut"></span>
+  </div>
+</ng-template>
+<ng-template #notFoundTemplate>Amazing</ng-template>

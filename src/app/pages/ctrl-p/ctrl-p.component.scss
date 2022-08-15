@@ -1,0 +1,21 @@
+.ctrl-p-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+
+  .ctrl-p-input {
+    width: 60%;
+    display: block;
+    margin: 5% auto 0 auto;
+  }
+}
+
+.item {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+}
