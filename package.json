@@ -9,7 +9,8 @@
     "test": "ng test",
     "compodoc:build": "compodoc -p tsconfig.doc.json",
     "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s",
-    "compodoc:serve": "compodoc -s"
+    "compodoc:serve": "compodoc -s",
+    "gh-build": "ng build --base-href /anime_dashboard/"
   },
   "private": true,
   "dependencies": {
