@@ -22,7 +22,7 @@ jobs:
         run: npm install && npm run gh-build && cp dist/anime_dashboard/index.html dist/anime_dashboard/404.html
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+        uses: JamesIves/github-pages-deploy-action@v4.9.0
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: dist/anime_dashboard # The folder the action should deploy.
