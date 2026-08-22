@@ -22,7 +22,7 @@
     "@angular/forms": "^14.0.0",
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
-    "@angular/router": "^14.0.0",
+    "@angular/router": "^22.1.2",
     "@compodoc/compodoc": "^2.0.0",
     "@fortawesome/angular-fontawesome": "^0.11.1",
     "@fortawesome/fontawesome-svg-core": "^7.3.1",
