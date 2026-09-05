@@ -18,7 +18,7 @@
     "@angular/cdk": "^22.1.2",
     "@angular/common": "^14.0.0",
     "@angular/compiler": "^14.0.0",
-    "@angular/core": "^22.1.2",
+    "@angular/core": "^22.1.4",
     "@angular/forms": "^14.0.0",
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
